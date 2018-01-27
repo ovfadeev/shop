@@ -101,18 +101,47 @@ var moduleApp = {
   },
   'checkBasket':function(){
     var basket = new Basket();
-    basket.render('.basket-list');
+    basket.render('.js-cart-dropdown');
 
-    $('.js-basket-add').on('click', function () {
+    $('.js-basket-add').on('click', function (e) {
+        e.preventDefault();
         var idPruduct = parseInt($(this).attr('data-id-product'));
         var name = $(this).attr('data-name');
         var quantity = parseInt($(this).attr('data-quantity'));
         var price = parseInt($(this).attr('data-price'));
+        var image = $(this).attr('data-image');
 
-        basket.add(idPruduct, quantity, price, name);
+        basket.add(idPruduct, quantity, price, name, image);
     });
 
-    $('.basket-list').on('click', '.remove-item', function (e) {
+    $('.js-basket-add-detail').on('click', function (e) {
+        e.preventDefault();
+        var arForm = $(this).closest('form').serializeArray();
+
+        for (var index in arForm) {
+          switch(arForm[index].name){
+            case 'id':
+              idPruduct = arForm[index].value;
+              break;
+            case 'quantity':
+              quantity = arForm[index].value;
+              break;
+            case 'price':
+              price = arForm[index].value;
+              break;
+            case 'name':
+              name = arForm[index].value;
+              break;
+            case 'image':
+              image = arForm[index].value;
+              break;
+          }
+        }
+
+        basket.add(idPruduct, quantity, price, name, image);
+    });
+
+    $('.js-cart-dropdown').on('click', '.remove-item a', function (e) {
         e.preventDefault();
         var idPruduct = parseInt($(this).attr('data-id-product'));
 
@@ -150,5 +179,9 @@ $(document).ready(function(){
 
   /* --- cart dropdown --- */
   moduleApp.basketDropdown();
+  /* --- end --- */
+
+  /* --- check cart --- */
+  moduleApp.checkBasket();
   /* --- end --- */
 });

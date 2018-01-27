@@ -1,35 +1,36 @@
 function Basket() {
-    Container.call(this, 'basket');
+  Container.call(this, 'basket');
 
-    this.countGoods = 0;
-    this.amount = 0;
+  this.countGoods = 0;
+  this.amount = 0;
 
-    this.classBasketItems = 'basket-items';
-    this.classBasketData = 'basket-data';
-    this.classBasketItemsList = 'items-list';
-    this.classBasketItem = 'item';
-    this.classDeleteBasketItem = 'remove-item';
+  this.classBasketCount = 'cart-dropdown';
+  this.classBasketDataAmount = 'total-amount';
 
-    this.basketItems = [];
-    this.collectBasketItems();
+  this.classBasketItemsList = 'cart-dropdown-list-items';
+  this.classBasketItem = 'cart-items';
+  this.classBasketItemImage = 'image';
+  this.classBasketItemContent = 'item';
+  this.classBasketItemName = 'name';
+  this.classBasketItemQuantity = 'quantity';
+  this.classBasketItemPrice = 'price';
+
+  this.classDeleteBasketItem = 'remove-item';
+
+  this.basketItems = [];
+  this.collectBasketItems();
 }
 
 Basket.prototype = Object.create(Container.prototype);
 Basket.prototype.constructor = Basket;
 
 Basket.prototype.render = function (root) {
-    var basketDiv = $('<div />', {
-        id: this.id,
-        text: 'Корзина:'
-    });
-
-    var basketItemsDiv = $('<div />', {
-        class: this.classBasketItems
-    });
-
-    basketItemsDiv.appendTo(basketDiv);
-    basketDiv.appendTo(root);
+  
 };
+
+Basket.prototype.error = function () {
+  alert("Error cart update! :(");
+}
 
 Basket.prototype.update = function (item) {
   var update = false;
@@ -43,17 +44,18 @@ Basket.prototype.update = function (item) {
   return update;
 };
 
-Basket.prototype.add = function (idProduct, quantity, price, name) {
-    var basketItem = {
-      "name": name,
-      "id": parseInt(idProduct),
-      "quantity": parseInt(quantity),
-      "price": parseInt(price)
-    };
-    if (this.update(basketItem) === false){
-      this.basketItems.push(basketItem);
-    }
-    this.refresh();
+Basket.prototype.add = function (idProduct, quantity, price, name, image) {
+  var basketItem = {
+    "name": name,
+    "id": parseInt(idProduct),
+    "quantity": parseInt(quantity),
+    "price": parseInt(price),
+    "image": image
+  };
+  if (this.update(basketItem) === false){
+    this.basketItems.push(basketItem);
+  }
+  this.refresh();
 };
 
 Basket.prototype.delete = function (idProduct) {
@@ -68,66 +70,75 @@ Basket.prototype.delete = function (idProduct) {
 };
 
 Basket.prototype.refresh = function () {
-  var basketDataDiv = $('<div />', {
-          class: this.classBasketData
-      });
-  var basketItemsListDiv = $('<div />', {
-          class: this.classBasketItemsList
-      });
-  var basketItemsDiv = $('.' + this.classBasketItems);
+  var basketDataAmount = $('.' + this.classBasketDataAmount);
+  var basketItemsListDiv = $('.' + this.classBasketItemsList);
+  var basketCountDiv = $('.' + this.classBasketCount + ' span');
   var count = 0;
   var amount = 0;
 
-  basketItemsDiv.empty();
-  basketDataDiv.empty();
+  basketCountDiv.empty();
+  basketDataAmount.empty();
   basketItemsListDiv.empty();
 
   for (var index in this.basketItems) {
-      var htmlItem = "";
-      var itemDiv = $('<div />', {
-        class: this.classBasketItem
-      });
+    var htmlItem = "";
+    var itemDiv = $('<div />', {
+      class: this.classBasketItem
+    });
 
-      htmlItem += this.htmlItem(this.basketItems[index]);
+    htmlItem += this.htmlItem(this.basketItems[index]);
 
-      itemDiv.append(htmlItem);
-      basketItemsListDiv.append(itemDiv);
+    itemDiv.append(htmlItem);
+    basketItemsListDiv.append(itemDiv);
 
-      count += +this.basketItems[index].quantity;
-      amount += +this.basketItems[index].price * +this.basketItems[index].quantity;
+    count += +this.basketItems[index].quantity;
+    amount += +this.basketItems[index].price * +this.basketItems[index].quantity;
   }
 
   this.countGoods = count;
   this.amount = amount;
 
-  basketDataDiv.append('<p>Всего товаров: ' + this.countGoods + '</p>');
-  basketDataDiv.append('<p>Сумма: ' + this.amount + '</p>');
-
-  basketItemsDiv.append(basketItemsListDiv);
-  basketItemsDiv.append(basketDataDiv);
+  basketCountDiv.append(this.countGoods);
+  basketDataAmount.append(this.amount);
 
   console.log(this.basketItems);
 };
 
 Basket.prototype.htmlItem = function (item) {
   var html = "";
-  html += '<p>' + item.name + '</p>';
-  html += '<p>' + item.price + ' руб.</p>';
-  html += '<p>Количество: ' + item.quantity + '</p>';
-  html += '<a href="#" data-id-product="' + item.id + '" class="' + this.classDeleteBasketItem + '">Удалить</a>';
+  html += '<div class="' + this.classBasketItemImage + '">';
+    html += '<img src="' + item.image + '" alt="' + item.name + '">';
+  html += '</div>';
+  html += '<div class="' + this.classBasketItemContent + '">';
+    html += '<div class="' + this.classBasketItemName + '">' + item.name + '</div>';
+    html += '<div class="' + this.classBasketItemPrice + '">';
+      html += '<span class="' + this.classBasketItemQuantity + '">' + item.quantity + '</span> x $<span class="' + this.classBasketItemPrice + '">' + item.price + '</span>';
+    html += '</div>';
+  html += '</div>';
+  html += '<div  class="' + this.classDeleteBasketItem + '">';
+    html += '<a href="#" data-id-product="' + item.id + '"></a>';
+  html += '</div>';
+
   return html;
 };
 
 Basket.prototype.collectBasketItems = function () {
   $.ajax({
-      url: 'ajax/getbasket.json',
-      dataType: 'json',
-      success: function (data) {
-          for (var index in data.basket) {
-              this.basketItems.push(data.basket[index]);
-          }
-          this.refresh();
-      },
-      context: this
+    url: 'ajax/getbasket.json',
+    data: {
+      user_id: 1
+    },
+    dataType: 'json',
+    success: function (data) {
+      if (data.result){
+        for (var index in data.items) {
+          this.basketItems.push(data.items[index]);
+        }
+        this.refresh();
+      } else {
+        this.error();
+      }
+    },
+    context: this
   });
 };

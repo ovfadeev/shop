@@ -157,7 +157,7 @@
                 </div>
               </div>
               <div class="product-cart">
-                <form>
+                <form method="POST">
                   <div class="params">
                     <div class="param-item">
                       <div class="param-title">
@@ -184,8 +184,11 @@
                       <input type="number" name="quantity" value="1" min="1">
                     </div>
                   </div>
+                  <input type="hidden" name="id" value="678">
                   <input type="hidden" name="price" value="561">
-                  <button type="submit" class="btn js-basket-add-form" name="addcart"><i></i> Add to Cart</button>
+                  <input type="hidden" name="name" value="Товар №678">
+                  <input type="hidden" name="image" value="images/product-cart-small.jpg">
+                  <button type="submit" class="btn js-basket-add-detail" name="addcart"><i></i> Add to Cart</button>
                 </form>
               </div>
             </div>
@@ -198,7 +201,7 @@
                   <div class="product-item">
                     <div class="image" style="background-image: url('images/product1.jpg');">
                       <div class="image-overlay">
-                        <a href="#"><i></i>Add to cart</a>
+                        <a href="#" class="js-basket-add" data-id-product="234" data-name="Товар №234" data-quantity="1" data-price="200" data-image="images/product-cart-small.jpg" ><i></i>Add to cart</a>
                       </div>
                     </div>
                     <div class="desc">
@@ -211,7 +214,7 @@
                   <div class="product-item">
                     <div class="image" style="background-image: url('images/product1.jpg');">
                       <div class="image-overlay">
-                        <a href="#"><i></i>Add to cart</a>
+                        <a href="#" class="js-basket-add" data-id-product="234" data-name="Товар №234" data-quantity="1" data-price="200" data-image="images/product-cart-small.jpg" ><i></i>Add to cart</a>
                       </div>
                     </div>
                     <div class="desc">
@@ -224,7 +227,7 @@
                   <div class="product-item">
                     <div class="image" style="background-image: url('images/product1.jpg');">
                       <div class="image-overlay">
-                        <a href="#"><i></i>Add to cart</a>
+                        <a href="#" class="js-basket-add" data-id-product="234" data-name="Товар №234" data-quantity="1" data-price="200" data-image="images/product-cart-small.jpg" ><i></i>Add to cart</a>
                       </div>
                     </div>
                     <div class="desc">
@@ -237,7 +240,7 @@
                   <div class="product-item">
                     <div class="image" style="background-image: url('images/product1.jpg');">
                       <div class="image-overlay">
-                        <a href="#"><i></i>Add to cart</a>
+                        <a href="#" class="js-basket-add" data-id-product="234" data-name="Товар №234" data-quantity="1" data-price="200" data-image="images/product-cart-small.jpg" ><i></i>Add to cart</a>
                       </div>
                     </div>
                     <div class="desc">
@@ -438,8 +441,10 @@
   </section>
   <script type="text/javascript" src="js/vendors/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" src="js/vendors/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="js/vendors/jquery.fancybox.js"></script>
+  <script type="text/javascript" src="js/vendors/jquery.fancybox.min.js"></script>
   <script type="text/javascript" src="js/vendors/jquery.bxslider.min.js"></script>
+  <script type="text/javascript" src="js/vendors/Container.js"></script>
+  <script type="text/javascript" src="js/vendors/Basket.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

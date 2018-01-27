@@ -1,6 +1,6 @@
 function Container(id) {
-    this.id = id;
-    this.htmlCode = '';
+  this.id = id;
+  this.htmlCode = '';
 }
 
 Container.prototype.render = function () {
