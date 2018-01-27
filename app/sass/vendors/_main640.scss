@@ -1,0 +1,294 @@
+@media (max-width: $mobileWidth) {
+
+  body {
+    width: $mobileBodyWidth;
+  }
+
+  .wrapper {
+    width: $mobileWrapperWidth;
+    min-width: $mobileWrapperWidth;
+    .logo {
+      display: none;
+      }
+      .logo-mobile {
+          display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+          background-color: #000;
+          height: 75px;
+          width: 75px;
+          a {
+              display: inline-block;
+              background: url('../images/logo-mobile.png') 0 0 no-repeat;
+              background-size: 100% 100%;
+              width: 45px;
+              height: 38px;
+          }
+      }
+  }
+  .global-header {
+    width: $mobileBodyWidth;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 0;
+    .wrapper {
+      width: 100%;
+          height: 75px;
+          display: block;
+          .logo-mobile {
+            float: left;
+          }
+          .search {
+            display: none;
+          }
+          .search-mobile {
+            float: left;
+        display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+            background-color: #000;
+            height: 75px;
+            width: 75px;
+            a {
+              color: #fff;
+              font-size: 30px;
+              line-height: 30px;
+            }
+          }
+          .menu-mobile {
+            float: right;
+        display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+            height: 75px;
+            width: 75px;
+            a {
+              color: #000;
+              font-size: 30px;
+              line-height: 30px;
+            }
+          }
+          .personal-mobile {
+            float: right;
+        display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+            height: 75px;
+            width: 75px;
+            a {
+              color: #000;
+              font-size: 30px;
+              line-height: 30px;
+            }
+          }
+          .cart {
+            float: right;
+            display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+            background-color: #000;
+            height: 75px;
+            width: 75px;
+              .cart-icons {
+          i {
+                      background: url('../images/icons/h-cart-w.png') 0 0 no-repeat;
+                      width: 32px;
+                      height: 30px;
+                  }
+              }
+              .cart-dropdown {
+          display: none;
+              }
+          }
+    }
+  }
+  .global-nav {
+    display: none;
+    width: $mobileBodyWidth;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
+  }
+  .page-index {
+      .main-slider {
+      ul {
+              li {
+                  a {
+                      display: block;
+                      .wrapper {
+                          position: relative;
+                          overflow: hidden;
+                          display: flex;
+                          flex-direction: row;
+                          justify-content: space-between;
+                          align-items: center;
+                      }
+                      .slider-image-item {
+                        order: 1;
+                          display: inline-block;
+                          img {
+                              display: inline-block;
+                          }
+                      }
+                      .slider-image-title {
+                        order: 2;
+                          text-align: left;
+                          display: inline-block;
+                          color: #000;
+                          text-transform: uppercase;
+                          border-left: 15px solid $colorCorp;
+                          font-family: 'Lato-Black';
+                          line-height: 1;
+                          div {
+                              padding-left: 10px;
+                          }
+                          .title {
+                              font-size: 60px;
+                          }
+                          .sub-title {
+                              font-size: 45px;
+                              span {
+                                  color: $colorCorp;
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+    }
+    .page-default {
+      .section-cnt {
+          margin-bottom: 100px;
+          .cols-cnt {
+              .cols {
+                  text-align: left;
+                  &:last-child {
+                      text-align: right;
+                  }
+                  .section-item {
+                      position: relative;
+                      width: 560px;
+                      display: inline-block;
+                      background-size: cover;
+                      background-repeat: no-repeat;
+                      background-position: 50% 50%;
+                      margin-bottom: 20px;
+                      &:hover {
+                          .title {
+                              animation-name: titleSection;
+                              animation-duration: 2s;
+                              animation-timing-function: ease;
+                              animation-fill-mode: forwards;
+                          }
+                      }
+                      &:last-child {
+                          margin-bottom: 0;
+                      }
+                      &.big {
+                          height: 540px;
+                      }
+                      &.small {
+                          height: 260px;
+                      }
+                      .title {
+                          position: absolute;
+                          top: 25px;
+                          left: 0;
+                          background-color: #fff;
+                          @include font('Lato-Black', #000, 18px, 1);
+                          text-transform: uppercase;
+                          padding: 10px;
+                          text-align: left;
+                          span {
+                              display: block;
+                              font-size: 30px;
+                              color: $colorCorp;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+      .product-cnt {
+          .product-title {
+
+          }
+          .product-sub-title {
+
+          }
+          .product-list {
+              .product-list-items {
+                width: 33%;
+                  .product-item {
+                    width: 340px;
+                      &:hover {
+
+                      }
+                      .image {
+                          width: 340px;
+                          height: 380px;
+                      }
+                      .desc {
+                          .name {
+
+                          }
+                          .text {
+                            display: block;
+                              @include font('Lato-Regular', #222222, 12px, 1);
+                              margin-bottom: 10px;
+                          }
+                          .price {
+
+                          }
+                      }
+                  }
+              }
+          }
+      }
+      .actions-cnt {
+          background-color: #222224;
+          overflow: hidden;
+          margin-bottom: 100px;
+          .action-image {
+            display: none;
+          }
+          .action-list {
+              width: 100%;
+              height: 340px;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              .action-items {
+                  display: inline-block;
+                  text-align: center;
+                  .action-img {
+                      display: inline-block;
+                      margin-right: 0;
+                      margin-bottom: 30px;
+                  }
+                  .action-desc {
+                      display: block;
+                      word-wrap: break-word;
+                      .desc-title {
+                          @include font('Lato-Bold', #fff, 20px, 1);
+                          margin: 10px 0;
+                      }
+                      .desc-other {
+                          @include font('Lato-Light', #fff, 14px, 30px);
+                      }
+                  }
+              }
+          }
+      }
+    }
+}

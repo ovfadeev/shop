@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js ie8 no-placeholder" > <![endif]-->
+<!--[if IE 9]><html class="no-js ie9 no-placeholder" ><![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <title>Cart — Олег Фадеев</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" id="viewport" content="width=device-width">
+  <!--[if lt IE 9]><script src="js/vendor/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <section class="main">
+    <header class="global-header">
+      <div class="wrapper">
+        <div class="logo">
+          <a href="#" title="logo"></a>
+        </div>
+        <div class="search">
+          <form action="">
+            <div class="search-dropdown">
+              <div class="search-dropdown-title">
+                <a href="#">Browse <i></i></a>
+              </div>
+              <div class="search-input">
+                <input type="text" name="q" value="" placeholder="Search for items...">
+              </div>
+              <div class="search-submit">
+                <input type="submit" class="btn-search" name="submit" value="">
+              </div>
+              <div class="search-dropdown-list js-search-dropdown close">
+                <div class="search-dropdown-list-item">
+                  <div class="title">Women</div>
+                  <div class="links">
+                    <a href="#">Dresses</a>
+                    <a href="#">Tops</a>
+                    <a href="#">Sweaters/Knits</a>
+                    <a href="#">Jackets/Coats</a>
+                    <a href="#">Blazers</a>
+                    <a href="#">Denim</a>
+                    <a href="#">Leggings/Pants</a>
+                    <a href="#">Skirts/Shorts</a>
+                    <a href="#">Accessories</a>
+                  </div>
+                </div>
+                <div class="search-dropdown-list-item">
+                  <div class="title">Men</div>
+                  <div class="links">
+                    <a href="#">Tees/Tank tops</a>
+                    <a href="#">Shirts/Polos</a>
+                    <a href="#">Sweaters</a>
+                    <a href="#">Sweatshirts/Hoodies</a>
+                    <a href="#">Blazers</a>
+                    <a href="#">Jackets/vests</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="cart">
+          <div class="cart-dropdown">
+            <i></i>
+            <span>0</span>
+          </div>
+          <div class="account">
+            <a href="#">My Account <i></i></a>
+          </div>
+          <div class="cart-dropdown-list js-cart-dropdown close">
+            <div class="cart-dropdown-list-items">
+              
+            </div>
+            <div class="cart-total">
+              Total <span class="total-amount">0</span>
+            </div>
+            <div class="cart-action">
+              <div class="cart-link">
+                <a href="checkout.html" class="btn-checkout">Checkout</a>
+              </div>
+              <div class="cart-link">
+                <a href="cart.html" class="btn-cart">Go to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav class="global-nav">
+      <a href="#">Home</a>
+      <a href="#" class="active">Man</a>
+      <a href="#">Women</a>
+      <a href="#">Kids</a>
+      <a href="#">Accoseriese</a>
+      <a href="#">Featured</a>
+      <a href="#">Hot Deals</a>
+    </nav>
+    <div class="content">
+      <div class="page-default page-cart" id="app" data-app="page-cart">
+        <div class="wrapper">
+          <div class="page-title">
+            <h1>New Arrivals</h1>
+            <div class="breadcrumb">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">New Arrivals</a></li>
+              </ul>
+            </div>
+          </div>
+          <main class="cart-cnt">
+            <div class="cart-row">
+              <div class="cart-items">
+                <div class="cart-cols">
+                  <div class="cart-title">Product Details</div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-title">unite Price</div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-title">Quantity</div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-title">shipping</div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-title">Subtotal</div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-title">ACTION</div>
+                </div>
+              </div>
+            </div>
+            <div class="cart-row">
+              <div class="cart-items">
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-image">
+                      <img src="images/product-cart.jpg" alt="">
+                    </div>
+                    <div class="product-params">
+                      <div class="name">
+                        <a href="#">Mango  People  T-shirt</a>
+                      </div>
+                      <div class="param">
+                        Color: <span>Red</span>
+                      </div>
+                      <div class="param">
+                        Size: <span>Xll</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        $150
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        <input type="number" name="quantity" value="2" min="1" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        FREE
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        $300
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        <a href="@" class="remove-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-items">
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-image">
+                      <img src="images/product-cart.jpg" alt="">
+                    </div>
+                    <div class="product-params">
+                      <div class="name">
+                        <a href="#">Mango  People  T-shirt</a>
+                      </div>
+                      <div class="param">
+                        Color: <span>Red</span>
+                      </div>
+                      <div class="param">
+                        Size: <span>Xll</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        $150
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        <input type="number" name="quantity" value="2" min="1" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        FREE
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        $300
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        <a href="@" class="remove-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-items">
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-image">
+                      <img src="images/product-cart.jpg" alt="">
+                    </div>
+                    <div class="product-params">
+                      <div class="name">
+                        <a href="#">Mango  People  T-shirt</a>
+                      </div>
+                      <div class="param">
+                        Color: <span>Red</span>
+                      </div>
+                      <div class="param">
+                        Size: <span>Xll</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        $150
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        <input type="number" name="quantity" value="2" min="1" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        FREE
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        $300
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-cols">
+                  <div class="cart-product">
+                    <div class="product-params">
+                      <div class="param">
+                        <a href="@" class="remove-cart"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cart-row">
+              <div class="cart-submit">
+                <input type="submit" class="cart-btn" name="remove-cart" value="cLEAR SHOPPING CART">
+                <input type="submit" class="cart-btn" name="continue" value="cONTINUE sHOPPING">
+              </div>
+            </div>
+            <div class="cart-row">
+              <div class="cart-items total">
+                <div class="address-cols">
+                  <div class="address-title">Shipping Adress</div>
+                  <div class="address-params">
+                    <div class="param">
+                      <select name="country" value="">
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Russia">Russia</option>
+                      </select>
+                    </div>
+                    <div class="param">
+                      <input type="text" name="state" value="" placeholder="State" required />
+                    </div>
+                    <div class="param">
+                      <input type="text" name="zip" value="" placeholder="Postcode / Zip" required />
+                    </div>
+                    <div class="param">
+                      <input type="submit" class="address-btn" name="get" value="get a quote" />
+                    </div>
+                  </div>
+                </div>
+                <div class="address-cols">
+                  <div class="address-title">coupon  discount</div>
+                  <div class="address-params">
+                    <div class="param-title">
+                      Enter your coupon code if you have one
+                    </div>
+                    <div class="param">
+                      <input type="text" name="coupon" value="" placeholder="Coupon" />
+                    </div>
+                    <div class="param">
+                      <input type="submit" class="address-btn" name="get" value="Apply coupon" />
+                    </div>
+                  </div>
+                </div>
+                <div class="address-cols">
+                  <div class="total-sum">
+                    <div class="sub-total">
+                      Sub total <span>$900</span>
+                    </div>
+                    <div class="grand-total">
+                      GRAND TOTAL <span>$900</span>
+                    </div>
+                    <input type="submit" class="btn" name="total" value="proceed to checkout">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+    <div class="subscribe-cnt">
+      <div class="wrapper">
+        <div class="cols-cnt">
+          <div class="cols">
+            <div class="slider-reviews">
+              <ul class="js-subscribe-slider">
+                <li>
+                  <div class="reviews-item">
+                    <div class="reviews-img" style="background-image: url('images/reviews.jpg');"></div>
+                    <div class="reviews-desc">
+                      <div class="reviews-text">
+                        “Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”
+                      </div>
+                      <div class="reviews-author">
+                        <div class="name">
+                          Bin Burhan
+                        </div>
+                        <div class="address">
+                          Dhaka, Bd
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="reviews-item">
+                    <div class="reviews-img" style="background-image: url('images/reviews.jpg');"></div>
+                    <div class="reviews-desc">
+                      <div class="reviews-text">
+                        “Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”
+                      </div>
+                      <div class="reviews-author">
+                        <div class="name">
+                          Bin Burhan
+                        </div>
+                        <div class="address">
+                          Dhaka, Bd
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="reviews-item">
+                    <div class="reviews-img" style="background-image: url('images/reviews.jpg');"></div>
+                    <div class="reviews-desc">
+                      <div class="reviews-text">
+                        “Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”
+                      </div>
+                      <div class="reviews-author">
+                        <div class="name">
+                          Bin Burhan
+                        </div>
+                        <div class="address">
+                          Dhaka, Bd
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="cols">
+            <div class="subscribe-form">
+              <div class="title">
+                Subscribe
+              </div>
+              <div class="sub-title">
+                FOR OUR NEWLETTER AND PROMOTION
+              </div>
+              <div class="form-cnt">
+                <form>
+                  <div class="form-input">
+                    <input type="email" name="email" value="" placeholder="Enter Your Email" required pattern="^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$">
+                  </div>
+                  <div class="form-submit">
+                    <input type="submit" name="submit" value="Subscribe">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="global-footer">
+      <div class="wrapper">
+        <div class="corp-cnt">
+          <div class="logo">
+            <a href="#" title="logo"></a>
+          </div>
+          <div class="corp-desc">
+            <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.</p>
+            <p>
+              Efficiently plagiarize 24/365 action items and focused infomediaries.
+              <br/>
+              Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+            </p>
+          </div>
+        </div>
+        <div class="nav-footer">
+          <nav>
+            <ul class="nav">
+              <li>
+                <a href="#">Company</a>
+                <ul class="sub-nav">
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">Shop</a>
+                  </li>
+                  <li>
+                    <a href="#">About</a>
+                  </li>
+                  <li>
+                    <a href="#">How It Works</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">INFORMATION</a>
+                <ul class="sub-nav">
+                  <li>
+                    <a href="#">Tearms & Condition</a>
+                  </li>
+                  <li>
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#">How to Buy</a>
+                  </li>
+                  <li>
+                    <a href="#">How to Sell</a>
+                  </li>
+                  <li>
+                    <a href="#">Promotion</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">SHOP CATEGORY</a>
+                <ul class="sub-nav">
+                  <li>
+                    <a href="#">Men</a>
+                  </li>
+                  <li>
+                    <a href="#">Women</a>
+                  </li>
+                  <li>
+                    <a href="#">Child</a>
+                  </li>
+                  <li>
+                    <a href="#">Apparel</a>
+                  </li>
+                  <li>
+                    <a href="#">Brows All</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="wrapper">
+          <div class="copyright">
+            &copy; 2017  Brand  All Rights Reserved — Олег Фадеев
+          </div>
+          <div class="soc-serv">
+            <a class="fb" href="#"></a>
+            <a class="tw" href="#"></a>
+            <a class="in" href="#"></a>
+            <a class="pin" href="#"></a>
+            <a class="g" href="#"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+  <script type="text/javascript" src="js/vendors/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/vendors/jquery.bxslider.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

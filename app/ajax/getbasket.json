@@ -1,0 +1,24 @@
+{
+  "result": 1,
+  "items": [
+    {
+      "id": 123,
+      "name": "Товар №123",
+      "quantity": 1,
+      "price": 300,
+      "color": "red",
+      "size": "XL",
+      "image": "images/product-cart-small.jpg"
+    },
+    {
+      "id": 234,
+      "name": "Товар №234",
+      "quantity": 2,
+      "price": 200,
+      "color": "black",
+      "size": "L",
+      "image": "images/product-cart-small.jpg"
+    }
+  ],
+  "amount": 700
+}
